@@ -1,9 +1,5 @@
 import spacy
-from nltk.stem.wordnet import WordNetLemmatizer
-from nltk.stem.porter import PorterStemmer
-
-lem = WordNetLemmatizer()
-stem = PorterStemmer()
+# nltk.download()
 
 # Load English tokenizer, tagger, parser, NER and word vectors
 nlp = spacy.load("es_core_news_sm")
@@ -30,10 +26,6 @@ def normalize(text):
 
 word_list = normalize(text)
 print(word_list)
-
-word = "runing"
-print("Lemmatized Word:", lem.lemmatize(word, "v"))
-print("Stemmed Word:", stem.stem(word))
 
 for token in nlp(text):
     print(token.text, token.lemma_, token.pos_)
